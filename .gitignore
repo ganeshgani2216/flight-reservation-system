@@ -1,0 +1,35 @@
+# Compiled class file
+*.class
+*.iml
+*.log
+
+# IDE flies
+.idea
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+
+
+# Plugin-specific files:
+
+# IntelliJ
+/out/
+bin/
+/bin/
+.project
+.classpath
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+modules.xml
+.idea/misc.xml
+*.ipr
+
+# Sonarlint plugin
+.idea/sonarlint
