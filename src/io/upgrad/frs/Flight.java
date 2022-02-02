@@ -1,4 +1,4 @@
-package io.upgrad.frs;
+package io.upgrad .frs;hisnt
 
 public class Flight {
 	
@@ -18,16 +18,18 @@ public class Flight {
 	}
 
 	public String getFlightDetails() {
-		return flightNumber;
-		
+		return "flightNumber: " + flightNumber +
+			   ", airline: " + airline +
+			   ", seatingCapacity: " + seatingCapacity +
+			   ", bookedSeats: " + bookedSeats;
 	}
 	
 	public boolean checkavailability() {
-		return true;
+		return this.getBookedSeats() == this.getSeatingCapacity() ? false : true;
 	}
 	
-	public int incrementBookingCounter() {
-		return capacity;
+	public void incrementBookingCounter() {
+		this.setBookedSeats(this.getBookedSeats() + 1);
 		
 	}
 
@@ -47,19 +49,19 @@ public class Flight {
 		this.airline = airline;
 	}
 
-	public int getCapacity() {
-		return capacity;
+	public int getSeatingCapacity() {
+		return seatingCapacity;
 	}
 
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
+	public void setSeatingCapacity(int seatingcapacity) {
+		this.seatingCapacity = seatingCapacity;
 	}
 
 	public int getBookedSeats() {
-		return bookedSeats;
-		
+		return bookedSeats;		
 	}
+	public void setBookedSeats(int bookedSeats) {
 	
-	
+		this.bookedSeats = bookedSeats;
 }
  	
