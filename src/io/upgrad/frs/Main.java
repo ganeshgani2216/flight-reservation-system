@@ -10,14 +10,15 @@ public class Main {
 	Passenger passenger1 = new Passenger("Ganesh", "7032606060", "gani@gmail.com", "vishaka", "gajuwaka", "Andhrapradesh");
 	Passenger passenger2 = new Passenger("vignesh", "7032060606", "vignesh2216@gmail.com","secunderabad", "hyderabad", "Telangana");
 	
-	RegularTicket regularTicket = new RegularTicket("5051","rajivgandhi", "delhi","2022-02-01T12:12:00","2022-02-01T16:56:00","C14",18500.00f, true,flight1, passenger1);
-	TouristTicket touristTicket = new TouristTicket("1505","rajivgandhi", "mumbai","2022-02-02T18:18:00","2022-02-02T22:10:00","B14","Hotel Taj, Mumbai", 22366.00f, true,flight2, passenger2);
+	RegularTicket regularTicket = new RegularTicket("5051","rajivgandhi", "delhi","2022-02-01 12:00","2022-02-01 16:00","C14",18500.00f, true,flight1, passenger1);
+	TouristTicket touristTicket = new TouristTicket("1505","rajivgandhi", "mumbai","2022-02-02 18:00","2022-02-02 21:00","B14","Hotel Taj, Mumbai", 22366.00f, true,flight2, passenger2);
 	
-	System.out.println(flight1.getFlightDetails());
-    System.out.println("\nPassanger details");
-    System.out.println("Name: " + passenger1.getName() + ", Phone: "+ passenger1.getPhone() + ", Email: " + passenger1.getEmail());
-    System.out.println("Passenger Count:" + Passenger.getIdCounter());
+	 printTicketDetails(regularTicket);
+     printTicketDetails (touristTicket);
 
 	}
+	public static void printTicketDetails (Ticket ticket){
+     System.out.println(ticket.getPnr());
+    }
+ }
 
-}

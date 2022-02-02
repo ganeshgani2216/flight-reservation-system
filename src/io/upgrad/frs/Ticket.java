@@ -25,15 +25,23 @@ public abstract class Ticket {
 	    public String CheckStatus() {
 	        return this.isCancelled()? "Cancelled" : "confirmed";
 	    }
-	    public int getFlightDuration() {
-	        // to be implemented
-	        return 0;
+	  
+	    public String getFlightDuration() {
+	        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+	        LocalDateTime departureDateTime = LocalDateTime.parse(this.getDepartureDateTime(), formatter);
+	        LocalDateTime arrivalDateTime = LocalDateTime.parse(this.getArrivalDateTime(), formatter);
+
+	        int durationDays = arrivalDateTime.getDayOfMonth() - departureDateTime.getDayOfMonth();
+	        int durationHrs = arrivalDateTime.getHour() - departureDateTime.getHour();
+	        int durationMinutes = Math.abs(arrivalDateTime.getMinute() - departureDateTime.getMinute());
+
+	        return durationDays + " Days : " + durationHrs + " Hours : " + durationMinutes + " minutes";
 	    }
+	    
 	    public void cancelTicket() {
 	        this.setCancelled(true);
 	    }
-
-	    //getters and setters
+	    
 	    public String getPnr() {
 	        return pnr;
 	    }

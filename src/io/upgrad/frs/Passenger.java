@@ -2,7 +2,7 @@ package io.upgrad.frs;
 
 public class Passenger {
 
-		private int id;
+		private final int id;
 		private static int idCounter;
 		
 		static {
@@ -83,7 +83,7 @@ public class Passenger {
 		        return idCounter;
 		    }
 
-
+		    
 
 }
 
